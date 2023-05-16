@@ -1,9 +1,19 @@
-import React from 'react'
+import { ICountry } from "../../../typings/countryTypes";
 
-const CountriesList = () => {
-  return (
-    <div>CountriesList</div>
-  )
+interface IProps {
+   counteries: ICountry[];
 }
 
-export default CountriesList
+const CountriesList = ({ counteries }: IProps) => {
+   return (
+      <div>
+         {counteries.map((item) => (
+            <div key={item.name.common}>
+               <h2>{item.name.common}</h2>
+            </div>
+         ))}
+      </div>
+   );
+};
+
+export default CountriesList;

@@ -6,8 +6,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./context/DarkModeContext";
+import axios from "axios";
+
+axios.defaults.baseURL = "https://restcountries.com/v3.1";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+
 root.render(
    <AuthContextProvider>
       <BrowserRouter>

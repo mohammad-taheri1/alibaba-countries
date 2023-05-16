@@ -19,12 +19,12 @@
 -  [ ] Bonus: Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
 -  [ ] Bonus: Dockerize your application by creating an efficient Dockerfile
 -  [ ] Bonus: Add unit tests for components
--  [ ] Bonus: Store the filters in the URL query strings and sync it with the component filter object
+-  [x] Bonus: Store the filters in the URL query strings and sync it with the component filter object
 -  [ ] Bonus: Add lazy loading for country images and list
 
 ## Extra
 
--  [ ] Debouncing on Search input
+-  [x] Debouncing on Search input
 
 ## Packages
 

@@ -9,16 +9,24 @@ import { useSearchParams } from "react-router-dom";
 const HomeComponent = () => {
    const [counteries, setCounteries] = useState<ICountry[]>([]);
    const [loading, setLoading] = useState<boolean>(false);
-   let [searchParams, setSearchParams] = useSearchParams();
-   console.log("HomeComponent");
+   const [searchParams] = useSearchParams();
 
    const nameQueryParam = searchParams.get("name");
+   const regionQueryParam = searchParams.get("region");
 
    const getCounteries = async (): Promise<any> => {
-      let dynamicURL = "/all";
-      if (nameQueryParam) {
-         dynamicURL = `/name/${nameQueryParam}`;
+      if (nameQueryParam === "undefined" || regionQueryParam === "undefined") {
+         return;
       }
+      let dynamicURL = "";
+      if (regionQueryParam) {
+         dynamicURL = `/region/${regionQueryParam}`;
+      } else if (nameQueryParam) {
+         dynamicURL = `/name/${nameQueryParam}`;
+      } else {
+         dynamicURL = "/all";
+      }
+
       try {
          setLoading(true);
          const { data } = await axios.get(dynamicURL);
@@ -33,7 +41,7 @@ const HomeComponent = () => {
 
    useEffect(() => {
       getCounteries();
-   }, [nameQueryParam]);
+   }, [nameQueryParam, regionQueryParam]);
 
    return (
       <div className="home">

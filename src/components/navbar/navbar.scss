@@ -11,6 +11,7 @@
    .navbar__brand {
       font-weight: bold;
       font-size: 24px;
+      cursor: pointer;
    }
    .navbar__toggle-dark-btn {
       @include d-flex(row, center, center);

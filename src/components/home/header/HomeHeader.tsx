@@ -2,13 +2,15 @@ import { useState, useEffect, useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import CustomSelect from "../../custom-select/CustomSelect";
 import { regionsList } from "./regionsList";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./home-header.scss";
 
 const HomeHeader = () => {
    const [search, setSearch] = useState<string>("");
    const inputRef = useRef<HTMLInputElement>(null);
    const navigate = useNavigate();
+   const [searchParams] = useSearchParams();
+   const regionQueryParam = searchParams.get("region");
 
    useEffect(() => {
       if (search !== "") {
@@ -34,7 +36,7 @@ const HomeHeader = () => {
             <AiOutlineSearch />
          </div>
          <div className="home-header__region">
-            <CustomSelect data={regionsList} placeHolderText="Filter By Region" />
+            <CustomSelect data={regionsList} selectedValue={regionQueryParam} placeHolderText="Filter By Region" />
          </div>
       </div>
    );

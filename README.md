@@ -21,3 +21,9 @@
 -  [ ] Bonus: Add unit tests for components
 -  [ ] Bonus: Store the filters in the URL query strings and sync it with the component filter object
 -  [ ] Bonus: Add lazy loading for country images and list
+
+## Packages
+
+-  React-router-dom: for implementign SPA
+-  Sass: for better css management
+<!-- - React-query: For managing side-effects of any Http Request -->

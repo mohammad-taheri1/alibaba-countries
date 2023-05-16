@@ -1,2 +1,17 @@
+:root {
+   --primary-color: hsl(200, 15%, 8%);
+   --secondary-color: hsl(0, 0%, 52%);
+   --primary-bg: hsl(0, 0%, 98%);
+}
 
+.app {
+   color: var(--primary-color);
+   background-color: var(--primary-bg);
+   transition: all 0.3s ease-in-out;
 
+   &.dark {
+      --primary-color: hsl(0, 0%, 100%);
+      --secondary-color: hsl(209, 23%, 22%);
+      --primary-bg: hsl(207, 26%, 17%);
+   }
+}

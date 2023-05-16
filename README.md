@@ -22,6 +22,10 @@
 -  [ ] Bonus: Store the filters in the URL query strings and sync it with the component filter object
 -  [ ] Bonus: Add lazy loading for country images and list
 
+## Extra
+
+-  [ ] Debouncing on Search input
+
 ## Packages
 
 -  React-router-dom: for implementign SPA

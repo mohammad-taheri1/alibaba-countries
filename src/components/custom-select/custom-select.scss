@@ -1,0 +1,64 @@
+@import "../../styles/mixins";
+.custom-select {
+   width: 400px;
+   height: 50px;
+   @include boxShaddowLight();
+   @include transition();
+   color: var(--text-color);
+   background-color: var(--element-color);
+   position: relative;
+
+   .custom-select__selected {
+      padding: 12px 24px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      cursor: pointer;
+
+      span {
+         user-select: none;
+      }
+
+      svg {
+         position: absolute;
+         right: 15px;
+         top: 10px;
+         font-size: 25px;
+      }
+   }
+
+   .custom-select__options {
+      height: 0;
+      position: absolute;
+      top: 60px;
+      height: 0;
+      width: 100%;
+      opacity: 0.6;
+      visibility: hidden;
+      border-radius: 8px;
+      transition: all 0.3s;
+      @include boxShaddowLight();
+      color: var(--text-color);
+      background-color: var(--element-color);
+      overflow: hidden;
+
+      &.active {
+         visibility: visible;
+         height: 250px;
+         opacity: 1;
+      }
+
+      .custom-select__options__item {
+         padding: 12px 24px;
+         cursor: pointer;
+
+         .radio {
+            display: none;
+         }
+
+         .label {
+            cursor: pointer;
+            user-select: none;
+         }
+      }
+   }
+}

@@ -5,6 +5,7 @@
    @include boxShaddowLight();
    @include transition();
    padding: 2rem 4rem;
+   color: var(--text-color);
    background-color: var(--element-color);
 
    .navbar__brand {

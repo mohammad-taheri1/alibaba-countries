@@ -1,17 +1,22 @@
+@import "./mixins";
+
 :root {
-   --primary-color: hsl(200, 15%, 8%);
-   --secondary-color: hsl(0, 0%, 52%);
-   --primary-bg: hsl(0, 0%, 98%);
+   --text-color: hsl(200, 15%, 8%);
+   --bg-color: hsl(0, 0%, 98%);
+   --element-color: hsl(0, 0%, 100%);
 }
 
 .app {
-   color: var(--primary-color);
-   background-color: var(--primary-bg);
-   transition: all 0.3s ease-in-out;
+   min-height: 100vh;
+   color: var(--text-color);
+   background-color: var(--bg-color);
+   @include transition();
 
    &.dark {
-      --primary-color: hsl(0, 0%, 100%);
-      --secondary-color: hsl(209, 23%, 22%);
-      --primary-bg: hsl(207, 26%, 17%);
+      --text-color: hsl(0, 0%, 100%);
+      --bg-color: hsl(207, 26%, 17%);
+      --element-color: hsl(209, 23%, 22%);
    }
 }
+
+// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)

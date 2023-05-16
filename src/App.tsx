@@ -1,7 +1,12 @@
-const App: React.FC = () => {
-  return (
-    <div>App</div>
-  )
-}
+import GlobalRoutes from "./routes/router";
 
-export default App
+const App: React.FC = () => {
+   return (
+      <div>
+         <h1>This is App Component</h1>
+         <GlobalRoutes />
+      </div>
+   );
+};
+
+export default App;

@@ -1,0 +1,36 @@
+@import "../../../styles/mixins";
+.home-header {
+   width: 100%;
+   @include d-flex(row, space-between, center);
+
+   .home-header__search {
+      position: relative;
+      input {
+         @include boxShaddowLight();
+         @include transition();
+         color: var(--text-color);
+         background-color: var(--element-color);
+         width: 400px;
+         height: 30px;
+         padding: 0.5rem 3rem;
+         border: none;
+         outline: none;
+         border-radius: 6px;
+
+         &::placeholder {
+            color: var(--input-color);
+         }
+      }
+
+      svg {
+         position: absolute;
+         left: 20px;
+         top: 9px;
+         font-size: 25px;
+         color: var(--input-color);
+      }
+   }
+
+   .home-header__region {
+   }
+}

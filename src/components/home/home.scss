@@ -1,0 +1,25 @@
+@import "../../styles/mixins";
+
+.home {
+   @include d-flex(column, flex-start, center);
+   @include transition();
+   padding: 2rem 4rem;
+}
+
+@media (max-width: 1024px) {
+   .navbar {
+      padding: 2rem 3rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .navbar {
+      padding: 2rem 2rem;
+   }
+}
+
+@media (max-width: 576px) {
+   .navbar {
+      padding: 2rem 1rem;
+   }
+}

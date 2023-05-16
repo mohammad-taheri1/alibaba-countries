@@ -4,22 +4,23 @@
    @include d-flex(column, flex-start, center);
    @include transition();
    padding: 2rem 4rem;
+   max-width: 100%;
 }
 
 @media (max-width: 1024px) {
-   .navbar {
+   .home {
       padding: 2rem 3rem;
    }
 }
 
 @media (max-width: 768px) {
-   .navbar {
+   .home {
       padding: 2rem 2rem;
    }
 }
 
 @media (max-width: 576px) {
-   .navbar {
+   .home {
       padding: 2rem 1rem;
    }
 }

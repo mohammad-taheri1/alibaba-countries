@@ -10,7 +10,7 @@
          @include transition();
          color: var(--text-color);
          background-color: var(--element-color);
-         width: 400px;
+         width: 450px;
          height: 30px;
          padding: 0.5rem 3rem;
          border: none;
@@ -30,7 +30,36 @@
          color: var(--input-color);
       }
    }
+}
 
-   .home-header__region {
+@media (max-width: 1024px) {
+   .home-header {
+      .home-header__search {
+         input {
+            width: 300px;
+            height: 30px;
+            padding: 0.5rem 3rem;
+         }
+      }
+   }
+}
+
+@media (max-width: 800px) {
+   .home-header {
+      @include d-flex(column, flex-start, flex-start);
+      gap: 1rem;
+
+      .home-header__search {
+         width: 100%;
+         input {
+            width: 80%;
+            max-width: 300px;
+            padding: 0.5rem 2rem;
+         }
+
+         svg {
+            left: 8px;
+         }
+      }
    }
 }

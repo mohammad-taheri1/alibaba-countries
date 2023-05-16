@@ -6,3 +6,9 @@
    gap: 2rem;
    margin-top: 3rem;
 }
+
+@media (max-width: 800px) {
+   .country-list {
+      @include d-flex(column, flex-start, center);
+   }
+}

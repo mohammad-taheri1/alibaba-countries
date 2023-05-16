@@ -1,0 +1,67 @@
+@import "../../styles/mixins";
+
+.navbar {
+   @include d-flex(row, space-between, center);
+   padding: 2rem 4rem;
+
+   .navbar__brand {
+      font-weight: bold;
+      font-size: 24px;
+   }
+   .navbar__toggle-dark-btn {
+      @include d-flex(row, center, center);
+      gap: 0.6rem;
+
+      span {
+         font-weight: bold;
+         font-size: 18px;
+      }
+   }
+}
+
+@media (max-width: 1024px) {
+   .navbar {
+      padding: 2rem 3rem;
+
+      .navbar__brand {
+         font-size: 22px;
+      }
+      .navbar__toggle-dark-btn {
+         span {
+            font-weight: bold;
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .navbar {
+      padding: 2rem 2rem;
+
+      .navbar__brand {
+         font-size: 20px;
+      }
+      .navbar__toggle-dark-btn {
+        gap: 0.4rem;
+         span {
+            font-size: 16px;
+         }
+      }
+   }
+}
+
+@media (max-width: 576px) {
+   .navbar {
+      padding: 2rem 1rem;
+
+      .navbar__brand {
+         font-size: 18px;
+      }
+      .navbar__toggle-dark-btn {
+         span {
+            font-size: 14px;
+         }
+      }
+   }
+}

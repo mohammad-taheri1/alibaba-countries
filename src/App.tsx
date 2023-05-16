@@ -1,9 +1,10 @@
+import Navbar from "./components/navbar/Navbar";
 import GlobalRoutes from "./routes/router";
 
 const App: React.FC = () => {
    return (
       <div>
-         <h1>This is App Component</h1>
+         <Navbar />
          <GlobalRoutes />
       </div>
    );

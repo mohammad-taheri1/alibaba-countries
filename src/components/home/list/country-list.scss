@@ -1,0 +1,8 @@
+@import "../../../styles/mixins";
+
+.country-list {
+   @include d-flex(row, space-between, flex-start);
+   flex-wrap: wrap;
+   gap: 2rem;
+   margin-top: 3rem;
+}

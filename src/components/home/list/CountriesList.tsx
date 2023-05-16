@@ -1,4 +1,6 @@
 import { ICountry } from "../../../typings/countryTypes";
+import CountryCard from "../../country-card/CountryCard";
+import "./country-list.scss";
 
 interface IProps {
    counteries: ICountry[];
@@ -6,11 +8,9 @@ interface IProps {
 
 const CountriesList = ({ counteries }: IProps) => {
    return (
-      <div>
-         {counteries.map((item) => (
-            <div key={item.name.common}>
-               <h2>{item.name.common}</h2>
-            </div>
+      <div className="country-list">
+         {counteries.map((country) => (
+            <CountryCard key={country.name.common} country={country} />
          ))}
       </div>
    );

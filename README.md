@@ -1,8 +1,8 @@
 # Alibaba Countries App
 
-## Deployed App
+## Deployed Verison
 
-[https://counteries.devempower.ir/](https://counteries.devempower.ir/)
+[https://countries.devempower.ir/](https://countries.devempower.ir/)
 
 ## Requirements:
 

@@ -1,0 +1,93 @@
+@import "../../styles/mixins";
+.country-details {
+   @include d-flex(column, flex-start, center);
+   @include transition();
+   padding: 2rem 4rem;
+   max-width: 100%;
+   color: var(--text-color);
+
+   .country-details__back-btn {
+      align-self: flex-start;
+      width: 120px;
+      height: 35px;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      color: var(--text-color);
+      background-color: var(--element-color);
+      @include transition();
+      @include boxShaddowLight();
+
+      @include d-flex(row, center, center);
+      gap: 5px;
+      cursor: pointer;
+   }
+
+   .country-details__card {
+      width: 100%;
+      @include d-flex(row, space-between, center);
+      gap: 3rem;
+
+      .country-details__card__image {
+         flex: 1;
+         img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+         }
+      }
+      .country-details__card__content {
+         flex: 1;
+         @include d-flex(column, flex-start, flex-start);
+
+         .country-details__card__content__data {
+            @include d-flex(column, flex-start, flex-start);
+
+            .title {
+            }
+
+            .body {
+            }
+         }
+
+         .country-details__card__content__neighbours {
+            span {
+               font-weight: 600;
+            }
+            a {
+               margin-left: 1rem;
+               height: 35px;
+               padding: 0 1rem;
+               border-radius: 8px;
+               border: none;
+               outline: none;
+               color: var(--text-color);
+               background-color: var(--element-color);
+               @include transition();
+               @include boxShaddowLight();
+
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px) {
+   .country-details {
+      padding: 2rem 3rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .country-details {
+      padding: 2rem 2rem;
+   }
+}
+
+@media (max-width: 576px) {
+   .country-details {
+      padding: 2rem 1rem;
+   }
+}

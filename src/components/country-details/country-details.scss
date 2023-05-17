@@ -32,26 +32,48 @@
       .country-details__card__image {
          flex: 1;
          img {
-            width: 100%;
+            width: 600px;
+            max-width: 100%;
             height: auto;
+            max-height: 375px;
             border-radius: 8px;
+            object-fit: cover;
          }
       }
+
       .country-details__card__content {
          flex: 1;
          @include d-flex(column, flex-start, flex-start);
-
+         gap: 3rem;
          .country-details__card__content__data {
+            width: 100%;
             @include d-flex(column, flex-start, flex-start);
 
             .title {
+               font-weight: 800;
+               font-size: 40px;
+               margin: 1rem 0;
             }
 
             .body {
+               width: 100%;
+               @include d-flex(row, space-between, center);
+
+               .body__column__row {
+                  margin: 0.4rem 0;
+
+                  .bold {
+                     font-weight: 600;
+                     margin-right: 6px;
+                  }
+               }
             }
          }
 
          .country-details__card__content__neighbours {
+            @include d-flex(row, flex-start, center);
+            flex-wrap: wrap;
+            gap: 0.5rem;
             span {
                font-weight: 600;
             }
@@ -66,6 +88,7 @@
                background-color: var(--element-color);
                @include transition();
                @include boxShaddowLight();
+               @include d-flex(row, center, center);
 
                cursor: pointer;
             }
@@ -77,12 +100,37 @@
 @media (max-width: 1024px) {
    .country-details {
       padding: 2rem 3rem;
+
+      .country-details__card {
+         @include d-flex(column, flex-start, center);
+         gap: 3rem;
+      }
    }
 }
 
 @media (max-width: 768px) {
    .country-details {
       padding: 2rem 2rem;
+      .country-details__card {
+         @include d-flex(column, flex-start, flex-start);
+         gap: 3rem;
+         .country-details__card__content {
+            @include d-flex(column, flex-start, flex-start);
+            gap: 2rem;
+            .country-details__card__content__data {
+               .title {
+                  font-weight: 600;
+                  font-size: 32px;
+                  margin: 0.8rem 0;
+               }
+
+               .body {
+                  @include d-flex(column, flex-start, flex-start);
+                  gap: 1rem;
+               }
+            }
+         }
+      }
    }
 }
 

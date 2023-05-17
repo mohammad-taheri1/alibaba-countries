@@ -17,6 +17,7 @@ const CountryDetails = () => {
       try {
          setLoading(true);
          setCountry(undefined);
+         setError(false);
          const { data } = await axios.get<ICountry[]>(`/name/${name}`);
 
          setCountry(data[0]);
@@ -50,17 +51,67 @@ const CountryDetails = () => {
                         <span>{country.name.common}</span>
                      </div>
                      <div className="body">
-                        <div className="body__left">1</div>
-                        <div className="body__right">2</div>
+                        <div className="body__column">
+                           <div className="body__column__row">
+                              <span className="bold">Native Name:</span>
+                              <span>
+                                 {country.name.nativeName
+                                    ? Object.values(country.name.nativeName)[0]?.common
+                                    : "No Data Found"}
+                              </span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Population:</span>
+                              <span>{country.population}</span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Region:</span>
+                              <span>{country.region}</span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Sub Region:</span>
+                              <span>{country.subregion}</span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Capital:</span>
+                              <span>{country.capital}</span>
+                           </div>
+                        </div>
+                        <div className="body__column">
+                           <div className="body__column__row">
+                              <span className="bold">Top Level Domain:</span>
+                              <span>{country.tld}</span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Currencies:</span>
+                              <span>
+                                 {country.currencies ? Object.values(country.currencies)[0]?.name : "No Data Found"}
+                              </span>
+                           </div>
+                           <div className="body__column__row">
+                              <span className="bold">Languages:</span>
+                              <span>
+                                 {country.languages
+                                    ? Object.values(country.languages).map((lang, index) => {
+                                         return <span key={index}>{index === 0 ? lang : `, ${lang}`}</span>;
+                                      })
+                                    : "No Data Found"}
+                              </span>
+                           </div>
+                        </div>
                      </div>
                   </div>
                   <div className="country-details__card__content__neighbours">
                      <span>Border Countries: </span>
-                     {country.borders?.map((item) => (
-                        <Link key={item} to={`/country/${item}`}>
-                           {item}
-                        </Link>
-                     ))}
+                     {country.borders ? (
+                        country.borders?.map((item) => (
+                           <Link key={item} to={`/country/${item}`}>
+                              {item}
+                           </Link>
+                        ))
+                     ) : (
+                        <h1>No data</h1>
+                     )}
                   </div>
                </div>
             </div>

@@ -3,7 +3,7 @@ export interface ICountry {
       common: string;
       official: string;
       nativeName: {
-         ara: {
+         [key: string]: {
             official: string;
             common: string;
          };
@@ -18,7 +18,7 @@ export interface ICountry {
    status: string;
    unMember: boolean;
    currencies: {
-      KWD: {
+      [key: string]: {
          name: string;
          symbol: string;
       };
@@ -32,7 +32,7 @@ export interface ICountry {
    region: string;
    subregion: string;
    languages: {
-      ara: string;
+      [key: string]: string;
    };
    translations: {
       ara: {

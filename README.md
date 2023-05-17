@@ -36,7 +36,7 @@
 -  To create the image:
 
    ```
-   docker build . -t alibaba-countries
+   docker build . -t alibaba-countries:1.0.0
    ```
 
 -  To see the images list
@@ -48,7 +48,7 @@
 -  To run the image
 
    ```
-   docker run -d -p 3333:3000 alibaba-countries
+   docker run -d -p 3333:3000 --name alibaba-countries-app alibaba-countries:1.0.0
    ```
 
    then go to `http://localhost:3333/` to see the application

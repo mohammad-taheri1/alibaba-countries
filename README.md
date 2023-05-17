@@ -17,7 +17,7 @@
 -  [ ] Bonus: Collect analytical data (in whichever way you prefer) using Google Analytics
 -  [x] Bonus: Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage
 -  [x] Bonus: Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
--  [ ] Bonus: Dockerize your application by creating an efficient Dockerfile
+-  [x] Bonus: Dockerize your application by creating an efficient Dockerfile
 -  [ ] Bonus: Add unit tests for components
 -  [x] Bonus: Store the filters in the URL query strings and sync it with the component filter object
 -  [ ] Bonus: Add lazy loading for country images and list
@@ -30,4 +30,25 @@
 
 -  React-router-dom: for implementign SPA
 -  Sass: for better css management
-<!-- - React-query: For managing side-effects of any Http Request -->
+
+## Work with Docker
+
+-  To create the image:
+
+   ```
+   docker build . -t alibaba-countries
+   ```
+
+-  To see the images list
+
+   ```
+   docker image ls
+   ```
+
+-  To run the image
+
+   ```
+   docker run -d -p 3333:3000 alibaba-countries
+   ```
+
+   then go to `http://localhost:3333/` to see the application

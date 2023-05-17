@@ -1,6 +1,6 @@
 @import "../../styles/mixins";
 
- .country-card {
+.country-card {
    width: 300px;
    max-width: 100%;
    height: 380px;
@@ -20,13 +20,18 @@
       }
    }
    .country-card__content {
+      padding-left: 2rem;
+      @include d-flex(column, flex-start, flex-start);
+      gap: 0.3rem;
       .country-card__content__title {
+         padding: 1rem 0;
+         font-weight: 800;
+         font-size: 20px;
       }
-      .country-card__content__population {
-      }
-      .country-card__content__region {
-      }
-      .country-card__content__capital {
+
+      .bold {
+         font-weight: 600;
+         margin-right: 6px;
       }
    }
 }

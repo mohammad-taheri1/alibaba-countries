@@ -5,7 +5,11 @@ import { regionsList } from "./regionsList";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./home-header.scss";
 
-const HomeHeader = () => {
+interface IProps {
+   sortAndSaveCountries: (sortType: string) => void;
+}
+
+const HomeHeader = ({ sortAndSaveCountries }: IProps) => {
    const [search, setSearch] = useState<string>("");
    const inputRef = useRef<HTMLInputElement>(null);
    const navigate = useNavigate();
@@ -34,6 +38,10 @@ const HomeHeader = () => {
                onChange={(e) => setSearch(e.target.value)}
             />
             <AiOutlineSearch />
+         </div>
+         <div className="home-header__sort">
+            <button onClick={() => sortAndSaveCountries("population")}>Sort By Population</button>
+            <button onClick={() => sortAndSaveCountries("name")}>Sort By Name</button>
          </div>
          <div className="home-header__region">
             <CustomSelect data={regionsList} selectedValue={regionQueryParam} placeHolderText="Filter By Region" />

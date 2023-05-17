@@ -12,7 +12,7 @@
 
 -  [x] Bonus: Toggle the color scheme between light and dark mode without using any 3rd party libraries
 -  [ ] Bonus: Searching using the keywords Grmany or Grmny should also work
--  [ ] Bonus: Add sort functionality for both Population and Country Name
+-  [x] Bonus: Add sort functionality for both Population and Country Name
 -  [ ] Bonus: Make all content server-side rendered and also have a fallback if the server-side render faces an error
 -  [ ] Bonus: Collect analytical data (in whichever way you prefer) using Google Analytics
 -  [x] Bonus: Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage

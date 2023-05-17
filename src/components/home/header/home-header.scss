@@ -10,7 +10,7 @@
          @include transition();
          color: var(--text-color);
          background-color: var(--element-color);
-         width: 450px;
+         width: 360px;
          height: 30px;
          padding: 0.5rem 3rem;
          border: none;
@@ -30,16 +30,40 @@
          color: var(--input-color);
       }
    }
+
+   .home-header__sort {
+      button {
+         height: 35px;
+         border-radius: 8px;
+         border: none;
+         outline: none;
+         color: var(--text-color);
+         background-color: var(--element-color);
+         @include transition();
+         @include boxShaddowLight();
+         cursor: pointer;
+         margin: 0 0.5rem;
+      }
+   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1068px) {
    .home-header {
       .home-header__search {
          input {
-            width: 300px;
+            width: 250px;
             height: 30px;
             padding: 0.5rem 3rem;
          }
+      }
+   }
+}
+
+@media (max-width: 916px) {
+   .home-header {
+      .home-header__sort {
+         @include d-flex(column, flex-start, center);
+         gap: 0.3rem;
       }
    }
 }
@@ -59,6 +83,14 @@
 
          svg {
             left: 8px;
+         }
+      }
+
+      .home-header__sort {
+         @include d-flex(row, flex-start, center);
+         gap: 1rem;
+         button {
+            margin: 0;
          }
       }
    }

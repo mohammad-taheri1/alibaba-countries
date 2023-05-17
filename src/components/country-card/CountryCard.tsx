@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ICountry } from "../../typings/countryTypes";
+import { formatNumberToThreeParts } from "../../utils/formatNumberToThreeParts";
 import "./country-card.scss";
 
 interface IProps {
@@ -18,7 +19,7 @@ const CountryCard = ({ country }: IProps) => {
             </div>
             <div className="country-card__content__population">
                <span className="bold">Population:</span>
-               <span>{country.population}</span>
+               <span>{formatNumberToThreeParts(country.population)}</span>
             </div>
             <div className="country-card__content__region">
                <span className="bold">Region:</span>

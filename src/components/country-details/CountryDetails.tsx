@@ -4,6 +4,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { BsArrowLeft } from "react-icons/bs";
 import "./country-details.scss";
+import { formatNumberToThreeParts } from "../../utils/formatNumberToThreeParts";
 
 const CountryDetails = () => {
    const [country, setCountry] = useState<ICountry>();
@@ -62,7 +63,7 @@ const CountryDetails = () => {
                            </div>
                            <div className="body__column__row">
                               <span className="bold">Population:</span>
-                              <span>{country.population}</span>
+                              <span>{formatNumberToThreeParts(country.population)}</span>
                            </div>
                            <div className="body__column__row">
                               <span className="bold">Region:</span>

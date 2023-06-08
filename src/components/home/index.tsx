@@ -9,7 +9,7 @@ import { sortCountries } from "../../utils/sortCountries";
 
 const HomeComponent = () => {
    const [counteries, setCounteries] = useState<ICountry[]>([]);
-   const [loading, setLoading] = useState<boolean>(false);
+   const [loading, setLoading] = useState<boolean>(true);
    const [searchParams] = useSearchParams();
 
    const nameQueryParam = searchParams.get("name");
@@ -34,7 +34,7 @@ const HomeComponent = () => {
       }
 
       try {
-         setLoading(true);
+         if (!loading) setLoading(true);
          if (counteries) {
             setCounteries([]);
          }
@@ -53,10 +53,12 @@ const HomeComponent = () => {
    }, [nameQueryParam, regionQueryParam]);
 
    if (loading) {
-      <div className="home">
-         <HomeHeader sortAndSaveCountries={sortAndSaveCountries} />
-         <h1>Loading</h1>
-      </div>;
+      return (
+         <div className="home">
+            <HomeHeader sortAndSaveCountries={sortAndSaveCountries} />
+            <h1>Loading</h1>
+         </div>
+      );
    }
 
    return (
